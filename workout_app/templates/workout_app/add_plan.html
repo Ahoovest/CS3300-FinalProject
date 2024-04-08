@@ -1,0 +1,14 @@
+{% extends "workout_app/base_template.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h2>Add a New Plan</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

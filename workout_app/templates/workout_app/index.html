@@ -5,7 +5,9 @@
     <div class="col-md-12">
         <h1>Welcome to We Can Workout!</h1>
         <p>This is an overview of our app. Blah blah blah...</p>
-        <!-- Add any other information you want to display on the home page -->
+        <!-- Add links/buttons to view and add plans -->
+        <a href="{% url 'plan_list' %}" class="btn btn-primary">View Plans</a>
+        <a href="{% url 'add_plan' %}" class="btn btn-primary">Add Plan</a>
     </div>
 </div>
 {% endblock %}

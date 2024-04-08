@@ -1,0 +1,18 @@
+{% extends "workout_app/base_template.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Detail</title>
+</head>
+<body>
+    <h1>Workout Detail</h1>
+    <p>Title: {{ workout.title }}</p>
+    <p>Description: {{ workout.description }}</p>
+    <!-- Add other workout details here -->
+</body>
+</html>
+{% endblock %}

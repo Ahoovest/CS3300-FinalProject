@@ -1,0 +1,25 @@
+{% extends "workout_app/base_template.html" %}
+
+{% block content %}
+    <h1>Plan Detail</h1>
+    <p>Title: {{ plan.title }}</p>
+    <p>About: {{ plan.about }}</p>
+    <!-- Add other plan details here -->
+    
+    <h2>Workouts</h2>
+    <ul>
+        {% for workout in plan.workout_set.all %}
+            <li>
+                {{ workout.title }} - 
+                <a href="{% url 'workout_detail' workout.pk %}">View</a> | 
+                <a href="{% url 'edit_workout' workout.pk %}">Edit</a>
+                <!-- Optionally display other workout details here -->
+            </li>
+        {% empty %}
+            <li>No workouts available for this plan.</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'edit_plan' plan.pk %}">Edit Plan</a>
+    <a href="{% url 'add_workout' plan.pk %}">Add Workout</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "workout_app/base_template.html" %}
+
+{% block content %}
+    <h1>Plan List</h1>
+    <ul>
+        {% for plan in plans %}
+            <li>{{ plan.title }} - <a href="{% url 'plan_detail' plan.pk %}">View</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_plan' %}">Add Plan</a>
+{% endblock %}
