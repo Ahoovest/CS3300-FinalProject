@@ -15,6 +15,13 @@
         {{ form.as_p }}
         <button type="submit">Save Changes</button>
     </form>
+
+     <!-- Delete button -->
+     <form action="{% url 'delete_workout' workout.pk %}" method="post" style="margin-top: 20px;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+    
 </body>
 </html>
 {% endblock %}

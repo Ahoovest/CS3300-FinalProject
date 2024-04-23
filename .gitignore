@@ -1,3 +1,4 @@
 #items to ignore for this project
 
 /djvenv/
+/static/

@@ -1,13 +1,35 @@
 {% extends "workout_app/base_template.html" %}
+{% load static %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-12">
-        <h1>Welcome to We Can Workout!</h1>
-        <p>This is an overview of our app. Blah blah blah...</p>
-        <!-- Add links/buttons to view and add plans -->
-        <a href="{% url 'plan_list' %}" class="btn btn-primary">View Plans</a>
-        <a href="{% url 'add_plan' %}" class="btn btn-primary">Add Plan</a>
-    </div>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-image: url("{% static 'images/home_image.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .workout-link img {
+        width: 200px; /* Adjust the width of the image */
+        height: auto; /* Maintain aspect ratio */
+        cursor: pointer; /* Show pointer cursor on hover */
+    }
+</style>
+
+<div class="workout-link">
+    <a href="{% url 'plan_list' %}">
+        <img src="{% static 'images/home_image.jpg' %}" alt="Workout Image">
+    </a>
 </div>
+
 {% endblock %}
