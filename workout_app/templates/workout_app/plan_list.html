@@ -7,5 +7,7 @@
             <li>{{ plan.title }} - <a href="{% url 'plan_detail' plan.pk %}">View</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'add_plan' %}">Add Plan</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'add_plan' %}">Add Plan</a>
+    {% endif %}
 {% endblock %}

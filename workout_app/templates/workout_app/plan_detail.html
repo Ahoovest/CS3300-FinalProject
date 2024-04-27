@@ -11,8 +11,10 @@
         {% for workout in plan.workout_set.all %}
             <li>
                 {{ workout.title }} - 
-                <a href="{% url 'workout_detail' workout.pk %}">View</a> | 
-                <a href="{% url 'edit_workout' workout.pk %}">Edit</a>
+                <a href="{% url 'workout_detail' workout.pk %}">View</a>
+                {% if user.is_authenticated %}
+                    | <a href="{% url 'edit_workout' workout.pk %}">Edit</a>
+                {% endif %}
                 <!-- Optionally display other workout details here -->
             </li>
         {% empty %}
@@ -20,6 +22,8 @@
         {% endfor %}
     </ul>
     
-    <a href="{% url 'edit_plan' plan.pk %}">Edit Plan</a>
-    <a href="{% url 'add_workout' plan.pk %}">Add Workout</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'edit_plan' plan.pk %}">Edit Plan</a>
+        <a href="{% url 'add_workout' plan.pk %}">Add Workout</a>
+    {% endif %}
 {% endblock %}

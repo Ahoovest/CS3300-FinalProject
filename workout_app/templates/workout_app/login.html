@@ -1,0 +1,21 @@
+{% extends "workout_app/base_template.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>User Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% if error_message %}
+                <p>{{ error_message }}</p>
+            {% endif %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+</div>
+{% endblock %}

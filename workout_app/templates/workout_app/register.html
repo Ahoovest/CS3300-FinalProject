@@ -1,0 +1,14 @@
+{% extends "workout_app/base_template.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>User Registration</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

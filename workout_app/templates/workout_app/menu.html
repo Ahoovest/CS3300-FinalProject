@@ -1,0 +1,15 @@
+{% extends "workout_app/base_template.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>Menu</h1>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'plan_list' %}">View Plans</a></li>
+            <li><a href="{% url 'add_plan' %}">Add Plan</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </div>
+</div>
+{% endblock %}
